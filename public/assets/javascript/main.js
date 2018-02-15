@@ -1,15 +1,30 @@
 const form = document.getElementById('form');
-form.addEventListener('click', (e)=>{
+const url = "http://localhost:3000/get_student";
+form.addEventListener('submit', (e)=>{
     e.preventDefault();
-    let formData = new FormData(e.target);
-   /*  fetch(url, 
-    {headers:{
-        method: 'post',
-        body: formData
-    }
-    }).then(res=> res.json())
+
+    let formData = {
+              email: e.target.email.value,
+              name: e.target.name.value,
+              city: e.target.city.value,
+              lang: e.target.lang.value,
+              lat: e.target.lat.value,
+              info: e.target.info.value,
+              image: e.target.image.value
+            };
+            console.log(formData);
+    const body = Object.keys(formData).map(key => {
+          return (encodeURIComponent(key) + "=" + encodeURIComponent(formData[key]))}).join("&");
+
+    fetch(url,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8"
+        },
+        body: body
+      }).then(res=> res.json())
     .then(data=> console.log(data))
-    fetch(err=> cpnsole.log(err)); */
+    .catch(err=> console.log(err));
 })
 
 //var map;
