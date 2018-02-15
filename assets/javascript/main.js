@@ -14,6 +14,8 @@ form.addEventListener('click', (e)=>{
 
 //var map;
 
+// init
+
 function initMap() {
     
     let myLocation  = new google.maps.Map(document.getElementById('map'), {
