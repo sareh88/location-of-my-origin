@@ -1,10 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Signika:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Ovo');
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+
 body {
 	margin: 0;
 	background-color: #010B1C;
 	height: 100%;
 	color: #fff;
-	font-family: 'Signika', sans-serif;
+	font-family: 'Permanent Marker', cursive;
+	
 }
 
 .grid {
@@ -17,7 +21,7 @@ body {
 	padding: 15px;
 	width: 100%;
 	font-size: 1.5em;
-	font-weight: 300;
+	font-weight: 100;
 	margin-top: 0;
 }
 
@@ -36,7 +40,7 @@ body {
 	width: 80%;
 	margin-bottom: 10px;
 	margin-top: 5px;
-	font-family: 'Signika', sans-serif;
+	font-family: 'Permanent Marker', cursive;
 }
 
 #form textarea {
@@ -48,7 +52,7 @@ body {
 	color: #fff;
 	width: 80%;
 	height: 50px;
-	font-family: 'Signika', sans-serif;
+	font-family: 'Permanent Marker', cursive;
 }
 
 button {
@@ -58,10 +62,10 @@ button {
 	border: 1px solid #D8D8D8;
 	height: 50px;
 	width: 80%;
-	font-family: 'Signika', sans-serif;
+	font-family: 'Permanent Marker', cursive;
 	color: #010B1C;
 	font-size: 1em;
-	font-weight: 800;
+	font-weight: 100;
 }
 
 button:hover {
@@ -69,4 +73,17 @@ button:hover {
 	border: 1px solid #181D28;
 	color: #fff;
  	cursor: pointer; cursor: hand;
+ }
+
+ .container{
+	text-align: center;
+	font-family: 'Ovo', serif;
+	
+	color: #010B1C;
+	
+ }
+
+ .picture{
+	height: 120px;
+	width: 100px;
  }
