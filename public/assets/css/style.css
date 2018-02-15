@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Ovo');
-
-@import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
 
 body {
 	margin: 0;
 	background-color: #010B1C;
 	height: 100%;
-	color: #fff;
-	font-family: 'Permanent Marker', cursive;
+	color: rgb(255, 72, 0);
+	font-family: 'Special Elite', cursive;
 	
 }
 
@@ -40,7 +39,7 @@ body {
 	width: 80%;
 	margin-bottom: 10px;
 	margin-top: 5px;
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Special Elite', cursive;
 }
 
 #form textarea {
@@ -52,17 +51,17 @@ body {
 	color: #fff;
 	width: 80%;
 	height: 50px;
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Special Elite', cursive;
 }
 
 button {
 	margin-top: 5px;
-	background-color: #D8D8D8;
+	background-color:  rgb(255, 72, 0);
 	border-radius: 2px;
 	border: 1px solid #D8D8D8;
 	height: 50px;
 	width: 80%;
-	font-family: 'Permanent Marker', cursive;
+	font-family: 'Special Elite', cursive;
 	color: #010B1C;
 	font-size: 1em;
 	font-weight: 100;

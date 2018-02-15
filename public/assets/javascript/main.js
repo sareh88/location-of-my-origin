@@ -71,7 +71,7 @@ form.addEventListener('submit', (e)=>{
               info: e.target.info.value,
               image: e.target.image.value
             };
-
+console.log(formData)
     const body = Object.keys(formData).map(key => {
           return (encodeURIComponent(key) + "=" + encodeURIComponent(formData[key]))}).join("&");
 
@@ -187,12 +187,13 @@ function initMap() {
      // looping through studentData object
     function userLoad(studentData){
         studentData.user.forEach((students) => {
+          console.log(students)
             var studentName = students.name;
             var studentImg = students.image;
             var studentCity = students.city;
             var studentInfo = students.info;
-            var cityLat = students.lat;
-            var cityLng = students.lang;
+            var cityLat = Number(students.lat);
+            var cityLng = Number(students.lang);
 
             let markers = new google.maps.Marker({
                position:{lat: cityLat, lng: cityLng},
