@@ -8,7 +8,7 @@ const validator = require('express-validator');
 
 const app = express();
 
-const db = "mongodb://localhost:27017/mapLocation";
+const db = "mongodb://Yasser:testyasser@ds237808.mlab.com:37808/mylocation-devugees";
 
 mongoose.promise = global.Promise;
 mongoose.connection.openUri(db);
@@ -21,22 +21,19 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(validator());
 
 app.get('/', (req, res, next)=>{
-    res.send('Hello');
-	// res.sendFile(__dirname + '/index.html');
+	res.sendFile(__dirname + '/index.html');
 });
 
 app.post('/get_student', (req, res, next)=>{
-
 	req.checkBody('name', 'name is required').notEmpty();
 	req.checkBody('email', 'Invalid email').isEmail().notEmpty();
 	req.checkBody('lang', 'longitude is required').notEmpty();;
 	req.checkBody('lat', 'latitude is required').notEmpty();
 	req.checkBody('info', 'Information is required').notEmpty();
 	req.checkBody('image', 'Image is required').notEmpty();
-	req.checkBody('flag', 'Flag is required').notEmpty();
 	req.checkBody('city', 'City is required').notEmpty();
     
-    var errors = req.validationErrors();
+    let errors = req.validationErrors();
 
     if(errors){
     	res.json(errors)
@@ -47,7 +44,6 @@ app.post('/get_student', (req, res, next)=>{
 							city: req.body.city,
 							lang: req.body.lang,
 							lat: req.body.lat,
-							flag: req.body.flag,
 							info: req.body.info,
 							image: req.body.image
 						};
@@ -58,8 +54,11 @@ app.post('/get_student', (req, res, next)=>{
 				res.json({success: false, message: 'This user is already exist...'})
 			}else{
 				userModel.create(newUser)
-				.then(data=> res.json(data))
+				.then(data=> console.log(data))
 				.catch(err=> res.json(err))
+				userModel.find({}, (err, user)=>{
+					res.json({user, newUser});
+				});
 			}
 		});
     }
