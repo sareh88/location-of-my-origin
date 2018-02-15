@@ -18,9 +18,10 @@ form.addEventListener('click', (e)=>{
 
 function initMap() {
     
-    let myLocation  = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 52.4893692, lng: 13.3886518},
-      zoom: 10,
+    let myLocation  =  {lat: 52.4893692, lng: 13.3886518};
+    map = new google.maps.Map(document.getElementById('map'), {
+      'center': myLocation, 
+      'zoom': 3,
       
       styles: [  // Styles a map in night mode.
         {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
