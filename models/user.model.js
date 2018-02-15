@@ -24,10 +24,6 @@ const userSchema = new Schema({
     	type: String,
     	required: true
     },
-    flag: {
-    	type: String,
-    	required: true
-    },
     info: {
     	type: String,
     	required: true
