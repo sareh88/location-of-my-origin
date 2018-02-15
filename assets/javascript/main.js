@@ -12,7 +12,7 @@ form.addEventListener('click', (e)=>{
     fetch(err=> cpnsole.log(err)); */
 })
 
-var map;
+//var map;
 
 function initMap() {
     
@@ -107,30 +107,31 @@ function initMap() {
         var studentName = studentData.name;
         var studentImg = studentData.image;
         var studentCity = studentData.city;
-        var cityLat = studentData.citylat[1];
-        var cityLng = studentData.citylng[2];
+        var studentInfo = studentData.info;
+        var cityLat = studentData.citylat;
+        var cityLng = studentData.citylng;
      })
 
-    /* var studentData.image = {
-        url:country.flag,
+    /* var studentImgUrl = {
+        url: studentImg,
         scaledSize: new google.maps.Size(20, 20),
-     }
+     } */
       
- */
-let markers = new google.maps.Marker({
+ 
+/* let markers = new google.maps.Marker({
     position:{lat: cityLat, lng: cityLng},
     map: map,
     icon: ''
 })
+ */
 
 
 
 
-
-let popups =            `<div class="container"><h2>City: ${studentData.city} </h2>`
-                        `<h3> ${studentData.Name}</h3>`
-                        `<img height="50" src="${studentData.image}">`
-                        `<p>infos: ${studentData.info} </p></div>`
+let popups =            `<div class="container"><h2>City: ${studentData.city} </h2>
+                        <h3> ${studentData.Name}</h3>
+                        <img height="50" src="${studentData.image}">
+                        <p>infos: ${studentData.info} </p></div>`
                
                
 let infowindow = new google.maps.InfoWindow({
@@ -170,4 +171,4 @@ let infowindow = new google.maps.InfoWindow({
 
     };
     
-  
+  initMap()
