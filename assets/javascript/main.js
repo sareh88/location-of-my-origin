@@ -1,4 +1,16 @@
-
+const form = document.getElementById('form');
+form.addEventListener('click', (e)=>{
+    e.preventDefault();
+    let formData = new FormData(e.target);
+   /*  fetch(url, 
+    {headers:{
+        method: 'post',
+        body: formData
+    }
+    }).then(res=> res.json())
+    .then(data=> console.log(data))
+    fetch(err=> cpnsole.log(err)); */
+})
 
 //var map;
 
