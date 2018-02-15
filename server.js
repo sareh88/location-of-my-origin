@@ -24,7 +24,15 @@ app.get('/', (req, res, next)=>{
 	res.sendFile(__dirname + '/index.html');
 });
 
-app.post('/get_student', (req, res, next)=>{
+app.get('/get_student', (req, res, next)=>{
+	userModel.find({}, (err, user)=>{
+		if(err) next(ere);
+		res.json({user});
+	});
+	
+});
+
+app.post('/send_student', (req, res, next)=>{
 	req.checkBody('name', 'name is required').notEmpty();
 	req.checkBody('email', 'Invalid email').isEmail().notEmpty();
 	req.checkBody('lang', 'longitude is required').notEmpty();;
@@ -49,16 +57,13 @@ app.post('/get_student', (req, res, next)=>{
 						};
 
 		userModel.findOne({email: req.body.email}, (err, user)=>{
-			if(err){res.json({Erro: err});}
+			if(err) next(err);
 			if(user){
 				res.json({success: false, message: 'This user is already exist...'})
 			}else{
 				userModel.create(newUser)
 				.then(data=> console.log(data))
 				.catch(err=> res.json(err))
-				userModel.find({}, (err, user)=>{
-					res.json({user, newUser});
-				});
 			}
 		});
     }
