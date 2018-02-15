@@ -171,4 +171,4 @@ let infowindow = new google.maps.InfoWindow({
 
     };
     
-  initMap()
+ 
